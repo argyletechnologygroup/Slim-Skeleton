@@ -1,0 +1,1 @@
+These services are intended for use by SlimApi\OAuth systems, however it's incorperation is currently deprecated as the project is using hybridauth

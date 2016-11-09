@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="Ian T Small">
+        <sql><![CDATA[
+CREATE TABLE `google_tokens` (
+	id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+	users_id INT(10) UNSIGNED NOT NULL,
+	refresh_token TEXT NOT NULL,
+	access_token TEXT NOT NULL,
+	`create_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	`update_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	primary key (id),
+	FOREIGN KEY (`users_id`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB CHARACTER SET=utf8 ROW_FORMAT=DYNAMIC;
+        ]]></sql>
+        <rollback><![CDATA[
+DROP TABLE google_tokens;
+        ]]></rollback>
+    </changeSet>
+
+    <changeSet id="2" author="Ian T Small">
+        <sql><![CDATA[
+ALTER TABLE google_tokens CHANGE COLUMN update_timestamp updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE google_tokens CHANGE COLUMN create_timestamp created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+        ]]></sql>
+        <rollback><![CDATA[
+ALTER TABLE google_tokens CHANGE COLUMN updated_at update_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE google_tokens CHANGE COLUMN created_at create_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+        ]]></rollback>
+    </changeSet>
+
+</databaseChangeLog>
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="Ian T Small">
+        <sql><![CDATA[
+CREATE TABLE `roles` (
+    `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(100) DEFAULT NULL,
+    `create_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    `update_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`),
+	UNIQUE KEY `identifier` (`name`)
+) ENGINE=InnoDB CHARACTER SET=utf8 ROW_FORMAT=DYNAMIC;
+        ]]></sql>
+        <rollback><![CDATA[
+DROP TABLE users;
+        ]]></rollback>
+    </changeSet>
+
+</databaseChangeLog>
