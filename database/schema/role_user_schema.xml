@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="1" author="Ian T Small">
+        <sql><![CDATA[
+CREATE TABLE `role_user` (
+	`user_id` INT(10) UNSIGNED NOT NULL,
+	`role_id` INT(10) UNSIGNED NOT NULL,
+	`create_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	`update_timestamp` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY `id` (`user_id`, `role_id`),
+	FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+	FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
+) ENGINE=InnoDB CHARACTER SET=utf8 ROW_FORMAT=DYNAMIC;
+        ]]></sql>
+        <rollback><![CDATA[
+DROP TABLE `role_user`;
+        ]]></rollback>
+    </changeSet>
+
+</databaseChangeLog>

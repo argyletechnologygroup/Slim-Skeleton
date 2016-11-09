@@ -1,0 +1,8 @@
+<article class="container">
+<?php foreach($dump as $name => $nextDump): ?>
+    <section class="row">
+        <h3 class="xs-col-12 sm-col-2"><?= $name ?></h3>
+        <pre class ="xs-col-12 sm-col-10"><?php var_dump($nextDump); ?></pre>
+    </section>
+<?php endforeach;?>
+<article>
