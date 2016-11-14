@@ -25,7 +25,7 @@ return [
         'logger' => [
             'name' => 'slim-app',
             'path' => __DIR__ . '/../logs/app.log',
-            'level' => \Monolog\Logger::DEBUG,
+            'level' => \Monolog\Logger::INFO,
         ],
 
         // OAuth Credentials
@@ -38,7 +38,7 @@ return [
         ],
 
         'db' => [
-            'huntbiddb' => [
+            'app_database' => [ //a speficic database connection
                 'driver' => 'mysql',
                 'host' => 'localhost',
                 'port' => '3306',

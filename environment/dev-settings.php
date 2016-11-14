@@ -38,7 +38,7 @@ return [
         ],
 
         'db' => [
-            'huntbiddb' => [
+            'app_database' => [ //a speficic database connection
                 'driver' => 'mysql',
                 'host' => 'localhost',
                 'port' => '3306',
