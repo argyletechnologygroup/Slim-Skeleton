@@ -29,7 +29,7 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "App\\": "src/app"
+            "App\\": "src/app/"
         }
     },
 	"scripts": {

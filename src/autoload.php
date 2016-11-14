@@ -8,7 +8,7 @@ set_include_path(get_include_path().PATH_SEPARATOR.CLASS_DIR);
 
 // Use default autoload implementation (written in C, so faster than PHP implementations
 spl_autoload_register();
-    
+
 spl_autoload_register(function ($class_name) {
     //echo 'loading class '.$class_name . '\n';
     $path = explode('\\', $class_name);

@@ -13,7 +13,6 @@ return array(
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',
     'File_Iterator_Factory' => $vendorDir . '/phpunit/php-file-iterator/src/Factory.php',
     'Google\\Auth\\ApplicationDefaultCredentials' => $vendorDir . '/google/auth/src/ApplicationDefaultCredentials.php',
-    'Google\\Auth\\CacheTrait' => $vendorDir . '/google/auth/src/CacheTrait.php',
     'Google\\Auth\\Cache\\InvalidArgumentException' => $vendorDir . '/google/auth/src/Cache/InvalidArgumentException.php',
     'Google\\Auth\\Cache\\Item' => $vendorDir . '/google/auth/src/Cache/Item.php',
     'Google\\Auth\\Cache\\MemoryCacheItemPool' => $vendorDir . '/google/auth/src/Cache/MemoryCacheItemPool.php',

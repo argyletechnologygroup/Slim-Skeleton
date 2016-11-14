@@ -7,13 +7,13 @@ return [
     'settings' => [
         'displayErrorDetails' => false, // set to false in production
         'addContentLengthHeader' => false, // Allow the web server to send the content-length header
-        
+
         'app' => [
             'shortName' => '', //The short app name text
             'logoMini' => '',// mini logo text
             'logoLg1' => '',//primary large logo text
             'logoLg2' => '',//secondary large logo text
-            'compName' => 'Hunt Real Estate', //Legal company name
+            'compName' => '', //Legal company name
         ],
 
         // Renderer settings
@@ -25,7 +25,7 @@ return [
         'logger' => [
             'name' => 'slim-app',
             'path' => __DIR__ . '/../logs/app.log',
-            'level' => \Monolog\Logger::DEBUG,
+            'level' => \Monolog\Logger::INFO,
         ],
 
         // OAuth Credentials
@@ -38,13 +38,13 @@ return [
         ],
 
         'db' => [
-            'huntbiddb' => [
+            'app_database' => [ //a speficic database connection
                 'driver' => 'mysql',
                 'host' => 'localhost',
                 'port' => '3306',
-                'database' => 'huntbid',
-                'username' => 'huntbid_rw',
-                'password' => '8jU&5eNGk4s8Z!xB',
+                'database' => '',
+                'username' => '',
+                'password' => '',
                 'charset'   => 'utf8',
                 'collation' => 'utf8_unicode_ci',
                 'prefix'    => '',

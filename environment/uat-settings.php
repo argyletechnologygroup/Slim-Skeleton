@@ -7,13 +7,13 @@ return [
     'settings' => [
         'displayErrorDetails' => true, // set to false in production
         'addContentLengthHeader' => false, // Allow the web server to send the content-length header
-        
+
         'app' => [
             'shortName' => '', //The short app name text
             'logoMini' => '',// mini logo text
             'logoLg1' => '',//primary large logo text
             'logoLg2' => '',//secondary large logo text
-            'compName' => 'Hunt Real Estate', //Legal company name
+            'compName' => '', //Legal company name
         ],
 
         // Renderer settings
@@ -38,13 +38,13 @@ return [
         ],
 
         'db' => [
-            'huntbiddb' => [
+            'app_database' => [ //a speficic database connection
                 'driver' => 'mysql',
                 'host' => 'localhost',
                 'port' => '3306',
-                'database' => 'huntbid',
-                'username' => 'huntbid_rw',
-                'password' => '8jU&5eNGk4s8Z!xB',
+                'database' => '',
+                'username' => '',
+                'password' => '',
                 'charset'   => 'utf8',
                 'collation' => 'utf8_unicode_ci',
                 'prefix'    => '',
@@ -68,7 +68,7 @@ return [
 			// You can also set it to
 			// - "error" To log only error messages. Useful in production
 			// - "info" To log info and error messages (ignore debug messages]
-			"debug_mode" => true,
+			"debug_mode" => 'true',
 			// Path to file writable by the web server. Required if 'debug_mode' is not false
 			"debug_file" => __DIR__ . '/../logs/hybridauth.log',
         ],
